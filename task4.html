@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      html{
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(238, 231, 231);
+      }
+      nav {
+        z-index: 1000;
+        position: fixed;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        height: 60px;
+        width: 100%;
+        border-bottom: 1px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-size: 35px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-weight: bold;
+      }
+      .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 65px;
+        font-size: 22px;
+        margin-right: 130px;
+      }
+      .menu a {
+        text-decoration: none;
+        color: black;
+      }
+      .menu a:hover {
+        font-weight: bold;
+        color: rgb(255, 0, 0); /* Change text color on hover */
+        transform: scale(1.4); /* Slightly increase the size */
+        transition: 0.3s ease; /* Smooth transition */
+        text-shadow: 0px 6px 5px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+      }
+
+      .logo {
+        margin-left: 80px;
+      }
+      #page1 {
+        margin: 0;
+        height: 99vh;
+        width: 100%;
+        border-bottom: 1px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+      }
+      .discription #dis {
+        font-family: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+      }
+      #page1 .left {
+        margin: 0;
+        height: 85vh;
+        width: 50%;
+        border: 1px solid transparent;
+      }
+      #page1 .right {
+        margin: 0;
+        height: 85vh;
+        width: 40%;
+        border: 1px solid transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #element {
+        color: rgb(255, 0, 0);
+        font-size: 50px;
+        margin-top: 50px;
+      }
+      .typed-cursor {
+        color: rgb(255, 0, 0); /* Set cursor color to red */
+      }
+      .element {
+        font-size: 70px;
+        margin-top: 50px;
+        margin-left: 50px;
+        font-weight: bold;
+      }
+      .discription {
+        margin-top: -40px;
+        margin-left: 50px;
+        text-align: left;
+        width: 90%;
+      }
+      .icons {
+        margin-top: 40px;
+        margin-left: 50px;
+        width: 90%;
+        display: flex;
+        justify-content: left;
+        gap: 20px;
+      }
+      .icon a {
+        display: inline-flex;
+        text-decoration: none;
+        cursor: pointer;
+        background: transparent;
+        border: 2px solid rgb(255, 0, 0);
+        width: 3rem;
+        height: 3rem;
+        align-items: center;
+        justify-content: center;
+        color: rgb(255, 0, 0);
+        transition: 0.3s ease;
+        border-radius: 50%;
+      }
+      .icon a:hover {
+        background: rgb(255, 0, 0);
+        color: white;
+        transform: scale(1.1) translateY(-5px);
+      }
+      .download {
+        margin-top: 40px;
+        margin-left: 50px;
+        height: 50px;
+        width: 25%;
+        border: 2px solid rgb(255, 0, 0);
+        border-radius: 50px;
+        color: rgb(255, 0, 0);
+        background-color: transparent;
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+      .download:hover {
+        background: rgb(255, 0, 0);
+        color: white;
+        transform: scale(1) translateY(-5px);
+      }
+      .profile {
+        height: 70%;
+        width: 70%;
+        border: 2px solid;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgb(255, 0, 0), 0 0 15px rgb(255, 0, 0),
+          0 0 20px rgb(255, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Ensure the image stays within the profile div */
+        background-color: whitesmoke;
+      }
+      .profie img {
+        width: 100%;
+        height: auto; /* Adjusts the height to maintain aspect ratio */
+        object-fit: cover; /* Ensures the image covers the div without distorting */
+        border-radius: 50%; /* Makes sure the image matches the rounded container */
+      }
+      #page2 {
+        margin: 0;
+        height: 99vh;
+        width: 100%;
+        border-bottom: 1px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+      }
+      #page2 .left {
+        margin-left: -23px;
+        height: 80vh;
+        width: 40%;
+        border: 1px solid transparent;
+        overflow: hidden; /* Ensure the image stays within the profile div */
+        object-fit: cover; /* Ensures the image covers the div without distorting */
+      }
+      #page2 .right {
+        margin: 0;
+        height: 98vh;
+        width: 55%;
+        border: 1px solid transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      #page2 .right .title{
+        height: 20%;
+        width: 96%;
+        border: 1px solid transparent;
+        font-size: 40px;
+        font-weight: bold;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      #page2 .right .content{
+        height: 65%;
+        width: 96%;
+        border: 1px solid transparent;
+        font-size: 18px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      #page3 {
+        margin: 0;
+        height: 96vh;
+        width: 100%;
+        border-bottom: 1px solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      #page3 .title{
+        height: 12%;
+        width: 92%;
+        margin-top: 50px;
+        text-align: center;
+        border: 1px solid transparent ;
+      }
+      #page3 .flowchart{
+        height: 80%;
+        width: 92%;
+        border: 1px solid transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      .container1{
+        height: 100%;
+        width: 100%;
+        border: 1px solid transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .container1 .but{
+        height: 75%;
+        width: 28%;
+        transition: 0.3s ease;
+        border: 1px solid black;
+        border-radius: 30px;
+        background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1));
+      }
+       .but:hover{
+        transform: scale(1.1) translateY(-2px);
+        box-shadow: 2px 2px 10px rgb(255, 0, 0);
+        cursor: pointer;
+        border: 1px solid rgb(255, 0, 0);
+      }
+      #page4 {
+        margin: 0;
+        height: 99vh;
+        width: 100%;
+        border-bottom: 1px solid transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #page4 .contact{
+        height: 85%;
+        width: 40%;
+        border: 2px solid;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 10px 10px;
+      }
+      .contact .title{
+        margin-top: -10px;
+        height: 14%;
+        width: 100%;
+        border: 1px solid transparent;
+        text-align: center;
+      }
+      .input{
+        height: 75%;
+        width: 96%;
+        border: 1px solid transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .input input,textarea{
+        border-radius: 8px;
+        transition: 0.3s ease;
+
+      }
+      .input input:hover,textarea:hover{
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgb(255, 0, 0), 0 0 5px rgb(255, 221, 0),
+          0 0 5px rgb(255, 0, 0);
+        cursor:text;
+      }
+      #submit{
+        color: rgb(255, 0, 0);
+        border: 3px solid rgb(255, 0, 0);
+        background-color: white;
+        font-size: 20px;
+      }
+      #submit:hover{
+        box-shadow: 0 0 5px rgb(255, 72, 0), 0 0 5px rgb(255, 221, 0),
+          0 0 5px rgb(255, 0, 0);
+          color: white;
+          border: 3px solid white;
+          background-color: rgb(255, 0, 0,0.7);
+      }
+      footer{
+        margin-top: 50px;
+        height: 30vh;
+        width: 100%;
+        background-color: rgb(248, 100, 42);
+        border-top: 2px solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      footer .icons{
+        margin-top: -10px;
+        height: 30%;
+        width: 30%;
+        border: 1px solid transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .icon2 a{
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        background: transparent;
+        border: 2px solid white;
+        width: 3rem;
+        height: 3rem;
+        display: inline-flex;
+        transition: 0.3s ease;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s ease;
+      }
+      .icon2 a:hover{
+        background-color: rgb(255, 255, 255,0.4);
+        transform: scale(1.1) translateY(-5px);
+      }
+      footer .titles{
+        margin-left: 50px;
+        height: 20%;
+        width: 40%;
+        border: 1px solid transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        transition: 0.3s ease;
+      }
+      footer .titles li:hover{
+        color: black;
+        text-decoration:underline;
+        cursor: pointer;
+      }
+      footer .copyrights{
+        margin-top: 50px;
+        margin-bottom: -20px;
+        margin-left: 50px;
+        height: 15%;
+        width: 40%;
+        border: 1px solid transparent;
+        display: flex;
+        justify-content: center;
+        align-items:center ;
+      }
+      #text{
+        font-weight: bold;
+      }
+      #text:hover{
+        color: red;
+        font-size: 18px;
+      }
+      .butt{
+        width: 65%;
+        height: 40%;
+        border: 1px solid transparent;
+        display: flex;
+        justify-content: space-between;
+      }
+      .s1,.s2,.s3,.s4{
+        height: 40px;
+        width: 85px;
+        border-radius: 15px;
+        background-color: transparent;
+        font-size: 15px;
+      }
+      .s1:hover,.s2:hover,.s3:hover,.s4:hover{
+        border: 3px solid red;
+        color: red;
+        height: 42px;
+        width: 87px;
+      }
+      .but .topic{
+        font-size: 35px;
+        text-align: center;
+        margin-top: 30px;
+      }
+      .but .content{
+        font-size: 21px;
+        margin-top: 20px;
+      }
+      .but hr{
+        color: black;
+        height: 1px;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">PORTFOLIO</div>
+      <div class="menu">
+        <div class="home"><a href="#page1">Home</a></div>
+        <div class="about"><a href="#page2">About</a></div>
+        <div class="education"><a href="#page3">projects</a></div>
+        <div class="services"><a href="/">Services</a></div>
+        <div class="contact"><a href="#page4">Contact</a></div>
+      </div>
+    </nav>
+    <div id="page1">
+      <div class="left">
+        <div class="intro">
+          <p class="element">
+            <span style="font-size: 40px"><b>Hi</b></span>
+            <br />
+            I'm <span style="color: rgb(255, 0, 0)">Ganesh</span>
+            <br />
+            <span style="font-size: 50px">I'm a </span>
+            <span id="element"></span>
+          </p>
+        </div>
+        <div class="discription">
+          <p id="dis" style="font-size: 18px">
+          <strong>My Expertise (Skill's) is in following Programming Language's : </strong></p><br>
+          <div class="butt">
+          <button class="s1">Java</button>
+          <button class="s2">Python</button>
+          <button class="s3">AI&ML</button>
+          <button class="s4">Front-end</button>
+        </div>
+        </div>
+        <br>
+        <div class="icons">
+          <div class="icon" class="instagram">
+            <a href="/"
+              ><i class="fa fa-instagram" style="font-size: 2rem"></i
+            ></a>
+          </div>
+          <div class="icon" class="linkedin">
+            <a href="/"
+              ><i class="fa fa-linkedin-square" style="font-size: 2rem"></i
+            ></a>
+          </div>
+          <div class="icon" class="twitter">
+            <a href="/"
+              ><i class="fa fa-twitter" style="font-size: 2rem"></i
+            ></a>
+          </div>
+          <div class="icon" class="github">
+            <a href="/"><i class="fa fa-github" style="font-size: 2rem"></i></a>
+          </div>
+        </div>
+        <button class="download">Download CV</button>
+      </div>
+
+      <div class="right">
+        <div class="profile">
+          <img
+            src="profile.png"
+            alt="my_pic"
+            height="480px"
+            width="400px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="page2">
+      <div class="left">
+        <img src="Untitled_design__3_-removebg-preview.png" alt="" height="800px" width="650px">
+      </div>
+      <div class="right">
+        <div class="title"><h2>About <span style="color: rgb(255, 0, 0);">Me</span></h2></div>
+        <div class="content">
+          <p>I’m a passionate learner, driven by my curiosity and enthusiasm for software development, with a focus on <span id="text">Web Development, Artificial Intelligence, Machine Learning, and Java.</span> I’ve completed several projects and courses that have provided me with practical, hands-on experience in these fields, allowing me to build and enhance my skills. <br><br>
+
+            <span id="text">Currently, I’m pursuing a Bachelor of Technology in Artificial Intelligence and Machine Learning at Thakur College of Science & Technology, maintaining a 9.5+ CGPA.</span> Throughout my academic journey, I’ve built a solid foundation in programming languages, data structures, and algorithms, and I love applying this knowledge to solve real-world challenges. <br><br>
+            
+              <span id="text">In addition to my coursework, I had the privilege of presenting a research paper at the MULTICON-2024 event on the topic "AI in Preventing Environmental Causes".</span> This experience allowed me to dive deep into the role AI can play in addressing critical environmental challenges. <br><br>
+            
+                <span id="text">Beyond academics, I’ve had the opportunity to intern with JUNOON Foundation during my summer break.</span> My work involved connecting passionate individuals with meaningful roles, providing essential academic resources, and organizing enriching events for underprivileged children. <br><br>
+            
+            My goal is to become a proficient and innovative software developer, creating impactful, user-friendly solutions that make a difference.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="page3">
+      <div class="title">
+        <p style="padding: 0; margin: 0; font-size: 18px;">What i <span style="color: rgb(255, 0, 0);">learn</span> so far...</p>
+        <h1 style="padding: 0; margin: 0; font-size: 50px;"><span style="color: rgb(255, 0, 0);">Pro</span>ject's</h1>
+      </div>
+      <div class="flowchart">
+        <div class="container1">
+
+          <div class="but" id="java">
+            <div class="topic">
+              JAVA
+            </div>
+            <hr>
+            <div class="content">
+              <ul>
+                <li>Tic Tac Toe (GUI)</li>
+                <br>
+                <li>AIRLINE Management System (GUI)</li>
+                <br>
+                <li>Travel and Tourism Management System (GUI)</li>
+                <br>
+                <li>Hotel Management System (GUI)</li>
+                <br>
+                <li>Bank Management System (GUI)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="but" id="python">
+            <div class="topic">
+              PYTHON
+            </div>
+            <hr>
+            <div class="content">
+              <ul>
+                <li>Face Detection & Recognition (Open CV)</li>
+                <br>
+                <li>Voice Assistant Bot (Jarvis)</li>
+                <br>
+                <li>Attendance Management System (GUI)</li>
+                <br>
+                <li>Hotel Management System (scratch code)</li>
+                <br>
+                <li>QR-CODE Generator</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="but" id="web-develpment">
+            <div class="topic">
+              Front-End
+            </div>     
+            <hr>    
+            <div class="content">
+              <ul>
+                <li>Ecommerce Website</li>
+                <br>
+                <li>Portfolio</li>
+                <br>
+                <li>Tic Tac Toe</li>
+                <br>
+                <li>Stop-Watch</li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    <div id="page4">
+      <div class="contact">
+        <div class="title"><h1 style="font-size: 40px; font-weight: bold; margin-top: -2px;">Contact</h1></div>
+        <div class="input">
+          <input type="text" id="name" placeholder="Full-Name" style=" width: 90%; padding: 1rem;"></input>
+          <input type="email" id="email" placeholder="E-mail" style="padding: 1rem; width: 90%;"></input>
+          <input type="tel" id="phoneno" placeholder="Phone-number" style="padding: 1rem; width: 90%;"></input>
+          <input type="text" id="subject" placeholder="Subject" style="padding: 1rem; width: 90%;"></input>
+          <textarea type="text" id="message" rows="8" placeholder="Message" style="padding: 1rem; width: 90%; border: 2px solid;"></textarea>
+        </div>
+        <button id="submit" style="height: 40px; width: 90px; border-radius: 15px; margin-top: 10px;">Submit</button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="icons">
+        <div class="icon2" class="instagram">
+          <a href="/"
+            ><i class="fa fa-instagram" style="font-size: 2rem"></i
+          ></a>
+        </div>
+        <div class="icon2" class="linkedin">
+          <a href="/"
+            ><i class="fa fa-linkedin-square" style="font-size: 2rem"></i
+          ></a>
+        </div>
+        <div class="icon2" class="twitter">
+          <a href="/"
+            ><i class="fa fa-twitter" style="font-size: 2rem"></i
+          ></a>
+        </div>
+        <div class="icon2" class="github">
+          <a href="/"><i class="fa fa-github" style="font-size: 2rem"></i></a>
+        </div>
+      </div>
+      <div class="titles">
+        <ul  style="display: flex; list-style: none; text-align: center; gap: 35px; font-size: 20px;">
+          <li>FAQ</li>
+          <li>About Me</li>
+          <li>Services</li>
+          <li>Privacy policy</li>
+        </ul>
+      </div>
+      <div class="copyrights">
+        <h4>Copyright &copy; 2024; Designed by GANESH</h4>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Web-Developer.","Coder.", "Designer."],
+        loop:true,
+        typeSpeed: 150,
+      });
+    </script>
+  </body>
+</html>
